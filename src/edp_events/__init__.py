@@ -5,6 +5,7 @@
 - ``schema``: validação do payload por JSON Schema (ADR-0003 / ADR-0005).
 - ``outbox``: Transactional Outbox, gravação na transação e relay (ADR-0002).
 - ``publishers``: destino do relay (Event Hubs com Entra ID; memória para testes).
+- ``registry``: registro idempotente dos JSON Schemas no Azure Schema Registry (extra ``eventhubs``).
 """
 
 from edp_events.envelope import CloudEvent, new_event
@@ -24,4 +25,4 @@ __all__ = [
     "register_outbox",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
