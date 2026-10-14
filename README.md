@@ -9,13 +9,14 @@ SDK Python da plataforma de dados event-driven. Ele entrega aos domínios a **pu
 | `edp_events.schema` | Valida o `data` contra o JSON Schema do contrato, antes de gravar | 0003, 0005 |
 | `edp_events.outbox` | **Transactional Outbox**: tabela, gravação na mesma transação e relay com `FOR UPDATE SKIP LOCKED` | 0002 |
 | `edp_events.publishers.eventhubs` | Publica no Event Hubs com Entra ID (Workload Identity), usando `partition_key` = id do agregado | 0003, 0008 |
+| `edp_events.registry` | Registra os JSON Schemas do domínio no Azure Schema Registry ao iniciar o produtor (idempotente); o registry é efêmero como o runtime | 0003, 0010 |
 
 ## Instalação
 
 Os wheels são publicados como **assets de GitHub Release**, porque o GitHub Packages não suporta PyPI:
 
 ```bash
-pip install "edp-events[eventhubs] @ https://github.com/ViniciusOtoni/platform-event-sdk/releases/download/v0.1.0/edp_events-0.1.0-py3-none-any.whl"
+pip install "edp-events[eventhubs] @ https://github.com/ViniciusOtoni/platform-event-sdk/releases/download/v0.2.0/edp_events-0.2.0-py3-none-any.whl"
 ```
 
 ## Uso

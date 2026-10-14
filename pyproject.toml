@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "edp-events"
-version = "0.1.0"
+version = "0.2.0"
 description = "SDK de eventos da plataforma de dados event-driven: CloudEvents, JSON Schema, Transactional Outbox e publisher para Event Hubs."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -19,6 +19,7 @@ dependencies = [
 eventhubs = [
   "azure-eventhub>=5.12,<6",
   "azure-identity>=1.19,<2",
+  "azure-schemaregistry>=1.3,<2",
 ]
 dev = [
   "pytest>=8",
